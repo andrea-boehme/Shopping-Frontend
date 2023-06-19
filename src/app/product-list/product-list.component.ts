@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ProductService} from "../product.service";
 import {product} from "../../models/product";
 import {ActivatedRoute} from "@angular/router";
+import {CartService} from "../cart.service";
 
 @Component({
   selector: 'app-product-list',
@@ -11,7 +12,8 @@ import {ActivatedRoute} from "@angular/router";
 export class ProductListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService
   ) {}
 
   products: product[] = [];
@@ -25,15 +27,9 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-  addToCart(i: number) {
-    if (this.productService.productsInCart.includes(this.productService.products[i])) {
-      let indexOfProduct = this.productService.productsInCart.indexOf(this.productService.products[i])
-      this.productService.productsInCart[indexOfProduct]['amount']++;
-    } else {
-      this.productService.productsInCart.push(this.productService.products[i]);
 
-    }
-  }
+
+
 }
 
 

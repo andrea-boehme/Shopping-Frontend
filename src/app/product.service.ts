@@ -21,7 +21,6 @@ export class ProductService {
     });
   }
 
-  productsInCart = [];
 
   getProducts(): Observable<product[]> {
     return this.http.get <product[]>("http://localhost:8080/product", {headers: this.getHeaders()});

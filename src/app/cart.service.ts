@@ -10,22 +10,17 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
 
-  getHeaders() {
-    let username = 'admin';
-    let password = 'adminPassword';
-    let auth = btoa(`${username}:${password}`);
+  productsInCart = [];
 
-    return new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Basic ' + auth
-    });
+  addToCart() {
+    return this.http.post <cartItem>("http://localhost:8080/cart", cartItem, {headers: this.getHeaders()});
   }
 
-  getProducts(): Observable<cartItem[]> {
-    return this.http.get <cartItem[]>("http://localhost:8080/Shopping-Frontend", {headers: this.getHeaders()});
-  }
-  addProduct(cartItem: cartItem): Observable<cartItem> {
-    return this.http.post <cartItem>("http://localhost:8080/Shopping-Frontend", cartItem, {headers: this.getHeaders()});
-  }
+  // getCarts(): Observable<cartItem[]> {
+  //   return this.http.get <cartItem[]>("http://localhost:8080/cart", {headers: this.getHeaders()});
+  // }
+  // addCart(cartItem: cartItem): Observable<cartItem> {
+  //   return this.http.post <cartItem>("http://localhost:8080/Shopping-Frontend", cartItem, {headers: this.getHeaders()});
+  // }
 
 }

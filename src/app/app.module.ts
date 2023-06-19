@@ -13,6 +13,9 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatListModule} from "@angular/material/list";
 import {MatCardModule} from "@angular/material/card";
+import {MatInputModule} from "@angular/material/input";
+import { ProductComponent } from './product/product.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -20,7 +23,8 @@ import {MatCardModule} from "@angular/material/card";
     AppComponent,
     HomeComponent,
     ProductListComponent,
-    CartComponent
+    CartComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import {MatCardModule} from "@angular/material/card";
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
