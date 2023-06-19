@@ -1,0 +1,9 @@
+<div class="card product-card">
+  <mat-card>
+    <mat-card-title>{{product.name}}</mat-card-title>{{product.price}} €
+    <mat-label>quantity: </mat-label>
+    <button (click) ="removeFromCart(product)" mat-mini-fab color="primary"><mat-icon>remove</mat-icon></button>
+    <input type="text" name="name" [(ngModel)]="quantity"/>
+    <button (click) ="addToCart(product)" mat-mini-fab color="primary"><mat-icon>add</mat-icon></button>
+  </mat-card>
+</div>
