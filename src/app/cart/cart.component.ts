@@ -10,14 +10,14 @@ import {product} from "../../models/product";
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  //cartItems: cartItem[];
+  cartItems: cartItem[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
-   // this.cartService.getCartItems().subscribe((t => {this.cartItems = t}));
+    //this.cartService.getCartItems().subscribe((t => {this.cartItems = t}));
   }
 
-  protected cartItems: cartItem[] = [];
+
 
 }

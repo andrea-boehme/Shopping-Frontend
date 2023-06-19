@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {product} from "../../models/product";
+import {ProductService} from "../product.service";
+import {CartService} from "../cart.service";
 
 @Component({
   selector: 'app-product',
@@ -11,24 +13,23 @@ export class ProductComponent implements OnInit {
   @Input() product!: product
   quantity: number = 1;
 
-  constructor() {
+  constructor(private cartService: CartService) {
   }
 
   ngOnInit(): void {
   }
 
-  addToCart(product: product) {
-    // if (this.cartService.productsInCart.includes(this.productService.products[i])) {
-    //   let indexOfProduct = this.productService.productsInCart.indexOf(this.productService.products[i])
-    //   this.productService.productsInCart[indexOfProduct]['amount']++;
-    // } else {
-    //   this.productService.productsInCart.push(this.productService.products[i]);
-    //
-    // }
-
+  updateCart() {
+    this.cartService.updateCart(this.product, this.quantity)
   }
 
-  removeFromCart(product: product) {
+  decreaseQuantity() {
+    if (this.quantity > 0 ) {
+      this.quantity --;
+    }
+  }
 
+  increaseQuantity() {
+    this.quantity ++;
   }
 }
