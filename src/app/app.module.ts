@@ -7,6 +7,13 @@ import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
 import {HttpClientModule} from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {MatListModule} from "@angular/material/list";
+import {MatCardModule} from "@angular/material/card";
+
 
 @NgModule({
   declarations: [
@@ -18,7 +25,13 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

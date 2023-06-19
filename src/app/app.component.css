@@ -1,0 +1,27 @@
+.header {
+  background-color: orchid;
+  padding: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 20px;
+}
+
+.navbar a.active {
+  font-weight: bold;
+}
+
+
+.links {
+  margin-left: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0 );
+}
+

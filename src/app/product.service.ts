@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {product} from "../models/product";
 
@@ -7,11 +7,26 @@ import {product} from "../models/product";
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'https://api.example.com/products';
 
   constructor(private http: HttpClient) { }
 
+  getHeaders() {
+    let username = 'name';
+    let password = 'password';
+    let auth = btoa(`${username}:${password}`);
+
+    return new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ' + auth
+    });
+  }
+
+  productsInCart = [];
+
   getProducts(): Observable<product[]> {
-    return this.http.get<product[]>(this.apiUrl);
+    return this.http.get <product[]>("http://localhost:8080/product", {headers: this.getHeaders()});
+  }
+  addProduct(product: product): Observable<product> {
+    return this.http.post <product>("http://localhost:8080/product", product, {headers: this.getHeaders()});
   }
 }

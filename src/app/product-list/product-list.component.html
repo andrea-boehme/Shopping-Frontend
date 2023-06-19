@@ -1,7 +1,17 @@
 <h2>Product List</h2>
 
-<ul>
-  <li *ngFor="let product of products">
-    {{ product.name }} - {{ product.price }}
-  </li>
-</ul>
+<div class="container product-container">
+  <div class="card product-card">
+    <mat-card *ngFor="let product of products; let i=index">
+        <mat-card-title>{{product[i].name}}</mat-card-title>{{product[i].price}} €
+      <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+      <mat-icon (click) ="addToCart(i)">add</mat-icon>
+      </button>
+    </mat-card>
+  </div>
+</div>
+
+<div>
+  <app-cart></app-cart>
+</div>
+

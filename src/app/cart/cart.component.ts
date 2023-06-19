@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {cartItem} from "../../models/cart-item";
 import {CartService} from "../cart.service";
+import {ProductService} from "../product.service";
+import {product} from "../../models/product";
 
 @Component({
   selector: 'app-cart',
@@ -8,20 +10,14 @@ import {CartService} from "../cart.service";
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cartItems: cartItem[];
+  //cartItems: cartItem[];
 
-  constructor(private cartService: CartService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.cartService.getCartItems().subscribe(items => {
-      this.cartItems = items;
-    });
+   // this.cartService.getCartItems().subscribe((t => {this.cartItems = t}));
   }
 
-  checkout() {
-    this.cartService.checkout().subscribe(() => {
-      // Handle successful checkout, e.g., show confirmation message
-    });
-  }
+  protected cartItems: cartItem[] = [];
 
 }
