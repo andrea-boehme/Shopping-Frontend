@@ -11,8 +11,8 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getHeaders() {
-    let username = 'name';
-    let password = 'password';
+    let username = 'astein@gmail.com';
+    let password = 'steiny';
     let auth = btoa(`${username}:${password}`);
 
     return new HttpHeaders({

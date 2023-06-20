@@ -1,0 +1,9 @@
+.back-link {
+  padding: 20px;
+  margin-left: 1000px;
+  font-style: italic;
+}
+
+.back-link a {
+  color: #3F50B5;
+}

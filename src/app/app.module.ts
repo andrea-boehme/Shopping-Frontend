@@ -16,6 +16,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import { ProductComponent } from './product/product.component';
 import {FormsModule} from "@angular/forms";
+import { CartItemComponent } from './cart-item/cart-item.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {FormsModule} from "@angular/forms";
     HomeComponent,
     ProductListComponent,
     CartComponent,
-    ProductComponent
+    ProductComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,

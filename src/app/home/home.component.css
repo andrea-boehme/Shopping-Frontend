@@ -1,0 +1,37 @@
+.header {
+  background-color: #3F50B5;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.logo {
+  margin-left: 80px;
+  font-size: 24px;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 20px;
+  color: white;
+}
+
+.navbar a.active {
+  font-weight: bold;
+}
+
+
+.links {
+  margin-left: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0 );
+}
+

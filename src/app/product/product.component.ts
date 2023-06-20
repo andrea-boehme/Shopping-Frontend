@@ -11,7 +11,8 @@ import {CartService} from "../cart.service";
 export class ProductComponent implements OnInit {
 
   @Input() product!: product
-  quantity: number = 1;
+  quantity: number = 0;
+  amount: number = 0;
 
   constructor(private cartService: CartService) {
   }
@@ -20,16 +21,18 @@ export class ProductComponent implements OnInit {
   }
 
   updateCart() {
-    this.cartService.updateCart(this.product, this.quantity)
+    this.cartService.updateCart(this.product, this.quantity).subscribe()
   }
 
   decreaseQuantity() {
     if (this.quantity > 0 ) {
       this.quantity --;
+      this.amount = this.quantity * this.product.price;
     }
   }
 
   increaseQuantity() {
     this.quantity ++;
+    this.amount = this.quantity * this.product.price;
   }
 }

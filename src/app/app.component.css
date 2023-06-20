@@ -1,20 +1,32 @@
 .header {
-  background-color: orchid;
+  background-color: #3F50B5;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.logo {
+  margin-left: 80px;
+  font-size: 24px;
 }
 
 .navbar a {
   text-decoration: none;
+  font-style: italic;
   padding: 20px;
+  color: white;
 }
 
-.navbar a.active {
+.navbar a.hover {
   font-weight: bold;
 }
 
 
+
 .links {
-  margin-left: 800px;
+  margin-left: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
