@@ -2,5 +2,18 @@
   <a routerLink="/" routerLinkActive="active">Back to Product List</a>
 </div>
 <div class="container product-container">
-  <!--<app-productQuantity [productQuantity]= c *ngFor="let c of cartItems"></app-productQuantity>-->
+  <app-product [product]= item.product [quantity]= item.quantity *ngFor="let item of cart?.items"></app-product>
 </div>
+
+<!--<div class="card product-card">-->
+<!--  <mat-card>-->
+<!--    <mat-card-title>{{product.name}}</mat-card-title>-->
+<!--    <mat-label>{{product.price}} € (price per unit)</mat-label><br>-->
+<!--    <mat-label>quantity: </mat-label>-->
+<!--    <button (click) ="decreaseQuantity()" mat-mini-fab color="primary"><mat-icon>remove</mat-icon></button>-->
+<!--    <input type="text" name="name" [(ngModel)]="quantity" class="input"/>-->
+<!--    <button (click) ="increaseQuantity()" mat-mini-fab color="primary"><mat-icon>add</mat-icon></button>-->
+<!--    <mat-label>amount: </mat-label> {{quantity * product.price}} €-->
+<!--  </mat-card>-->
+<!--  <button (click) ="updateCart()" mat-raised-button color="primary"> Close Order</button><br>-->
+<!--</div>-->

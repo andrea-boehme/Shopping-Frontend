@@ -35,9 +35,9 @@ export class CartService {
     return this.http.put<cart> ("http://localhost:8080/cart", productQuantity, {headers: this.getHeaders()});
   }
 
-  // getCarts(): Observable<productQuantity[]> {
-  //   return this.http.get <productQuantity[]>("http://localhost:8080/cart", {headers: this.getHeaders()});
-  // }
+  getCart(): Observable<cart> {
+    return this.http.get <cart>("http://localhost:8080/cart", {headers: this.getHeaders()});
+  }
   // addCart(productQuantity: productQuantity): Observable<productQuantity> {
   //   return this.http.post <productQuantity>("http://localhost:8080/Shopping-Frontend", productQuantity, {headers: this.getHeaders()});
   // }
