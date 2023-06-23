@@ -6,7 +6,7 @@
     <button (click) ="decreaseQuantity()" mat-mini-fab color="primary"><mat-icon>remove</mat-icon></button>
     <input type="text" name="name" [(ngModel)]="quantity" class="input"/>
     <button (click) ="increaseQuantity()" mat-mini-fab color="primary"><mat-icon>add</mat-icon></button>
-    <button (click) ="updateCart()" mat-raised-button color="primary">add to Shopping Cart</button><br>
+    <button *ngIf=!hide (click) ="updateCart()" mat-raised-button color="primary">add to Shopping Cart</button><br>
     <mat-label>amount: </mat-label> {{quantity * product.price}} €
   </mat-card>
 </div>

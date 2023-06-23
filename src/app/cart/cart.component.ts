@@ -4,6 +4,7 @@ import {CartService} from "../cart.service";
 import {ProductService} from "../product.service";
 import {product} from "../../models/product";
 import {cart} from "../../models/cart";
+import {OrderService} from "../order.service";
 
 @Component({
   selector: 'app-cart',
@@ -12,12 +13,8 @@ import {cart} from "../../models/cart";
 })
 export class CartComponent implements OnInit {
 
-  constructor(private cartService: CartService) { }
 
-  @Input() product!: product
-  @Input() quantity: number = 0;
-
-  products: product[] = [];
+  constructor(private cartService: CartService, private orderService: OrderService) { }
 
   cart?: cart
 
@@ -27,18 +24,16 @@ export class CartComponent implements OnInit {
     });
   }
 
-  updateCart() {
-    this.cartService.updateCart(this.product, this.quantity).subscribe()
-  }
-
-  decreaseQuantity() {
-    if (this.quantity > 0 ) {
-      this.quantity --;
+  calculateSum(): number {
+    let sum: number = 0;
+    for (let i of this.cart!.items) {
+      sum += i.product.price * i.quantity;
     }
+      return sum;
   }
 
-  increaseQuantity() {
-    this.quantity ++;
+  closeOrder() {
+    this.orderService.addOrder().subscribe()
   }
 
 }

@@ -16,6 +16,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import { ProductComponent } from './product/product.component';
 import {FormsModule} from "@angular/forms";
+import {MatDialogModule} from '@angular/material/dialog';
+import { OrdersHistorieComponent } from './orders-historie/orders-historie.component';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import {FormsModule} from "@angular/forms";
     ProductListComponent,
     CartComponent,
     ProductComponent,
+    OrdersHistorieComponent,
 
   ],
   imports: [
@@ -38,7 +41,8 @@ import {FormsModule} from "@angular/forms";
     MatListModule,
     MatCardModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

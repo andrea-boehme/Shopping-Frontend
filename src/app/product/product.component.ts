@@ -11,6 +11,7 @@ export class ProductComponent implements OnInit {
 
   @Input() product!: product
   @Input() quantity: number = 0;
+  @Input() hide: boolean = false;
 
   constructor(private cartService: CartService) {
   }
@@ -31,4 +32,6 @@ export class ProductComponent implements OnInit {
   increaseQuantity() {
     this.quantity ++;
   }
+
+
 }

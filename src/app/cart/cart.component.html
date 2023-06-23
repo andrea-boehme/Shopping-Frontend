@@ -1,9 +1,12 @@
 <div class="back-link">
   <a routerLink="/" routerLinkActive="active">Back to Product List</a>
 </div>
-<div class="container product-container">
-  <app-product [product]= item.product [quantity]= item.quantity *ngFor="let item of cart?.items"></app-product>
+<button (click)="closeOrder()" mat-raised-button color="accent">Close Order</button>
+<div class="container product-container" *ngIf="cart">
+  <app-product [hide]=true [product]= item.product [quantity]= item.quantity *ngFor="let item of cart?.items"></app-product>
 </div>
+<div *ngIf="cart"><mat-label>total: </mat-label> {{calculateSum()}} €</div>
+
 
 <!--<div class="card product-card">-->
 <!--  <mat-card>-->
