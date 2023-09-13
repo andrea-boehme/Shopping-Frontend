@@ -5,6 +5,7 @@ import {ProductService} from "../product.service";
 import {product} from "../../models/product";
 import {cart} from "../../models/cart";
 import {OrderService} from "../order.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ import {OrderService} from "../order.service";
 export class CartComponent implements OnInit {
 
 
-  constructor(private cartService: CartService, private orderService: OrderService) { }
+  constructor(private cartService: CartService, private orderService: OrderService, private router: Router) { }
 
   cart?: cart
 
@@ -33,7 +34,9 @@ export class CartComponent implements OnInit {
   }
 
   closeOrder() {
-    this.orderService.addOrder().subscribe()
+    this.orderService.addOrder().subscribe((x) => {
+      this.router.navigate(['/orders-historie']);
+    });
   }
 
 }

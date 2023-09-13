@@ -3,10 +3,10 @@
     <mat-card-title>{{product.name}}</mat-card-title>
     <mat-label>{{product.price}} € (price per unit)</mat-label><br>
     <mat-label>quantity: </mat-label>
-    <button (click) ="decreaseQuantity()" mat-mini-fab color="primary"><mat-icon>remove</mat-icon></button>
+    <button *ngIf=!hide (click) ="decreaseQuantity()" mat-mini-fab color="primary"><mat-icon>remove</mat-icon></button>
     <input type="text" name="name" [(ngModel)]="quantity" class="input"/>
-    <button (click) ="increaseQuantity()" mat-mini-fab color="primary"><mat-icon>add</mat-icon></button>
-    <button *ngIf=!hide (click) ="updateCart()" mat-raised-button color="primary">add to Shopping Cart</button><br>
+    <button *ngIf=!hide (click) ="increaseQuantity()" mat-mini-fab color="primary"><mat-icon>add</mat-icon></button>
+    <button *ngIf=!hide (click)="updateCart()" mat-raised-button color="primary">add to Shopping Cart</button><br>
     <mat-label>amount: </mat-label> {{quantity * product.price}} €
   </mat-card>
 </div>
