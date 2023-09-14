@@ -1,0 +1,62 @@
+.product-container {
+  max-width: 70%;
+}
+
+.product-card {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-button {
+  margin: 0 5px;
+}
+
+.mat-mdc-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 4px 4px 4px lightgray;
+  border-radius: 10px;
+  margin: 15px;
+  width: 300px;
+}
+
+.mat-mdc-card-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.mat-mdc-card-actions > .mat-primary {
+  margin: 10px !important;
+}
+
+.mat-mdc-card-title {
+  margin-top: 20px;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 64px;
+  white-space: nowrap;
+  width: 250px;
+}
+
+.mat-mdc-card-subtitle {
+  text-align: center;
+}
+
+
+.back-link {
+  padding: 20px;
+  margin-left: 1000px;
+  font-style: italic;
+}
+
+.back-link a {
+  color: #3F50B5;
+}

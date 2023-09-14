@@ -1,0 +1,16 @@
+<div class="back-link">
+  <a routerLink="/" routerLinkActive="active">Back to Product List</a>
+</div>
+<div *ngIf="orders[0]">ORDERS HISTORY for: {{ orders[0].user.firstname }}</div>
+
+<div class="container product-container">
+  <div *ngFor="let o of orders">
+    <mat-card>
+      <mat-card-title>Order ID: {{ o.id }}</mat-card-title>
+      <!--<mat-label>Order Date: {{ o.date }}</mat-label><br>-->
+      <app-product [hide]=true [product]= item.product [quantity]= item.quantity *ngFor="let item of o.items"></app-product>
+      <!--<mat-label>Shipping Status: {{ o.shippingState }}</mat-label><br>
+      <mat-label>Payment Status: {{ o.paid }}</mat-label><br>-->
+    </mat-card>
+  </div>
+</div>
